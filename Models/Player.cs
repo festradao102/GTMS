@@ -14,31 +14,31 @@ namespace GTMS.Models
         public int uniqueID {get; set;}
 
         [Display(Name = "Identificacion")]
-        [Required(ErrorMessage = "{0} Este campo es requerido")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public int id {get; set; }
 
         [Display(Name = "Nombre")]
-        [Required(ErrorMessage = "{0} Este campo es requerido")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public string name {get; set;}
 
         [Display(Name = "Apellido")]
-        [Required(ErrorMessage = "{0} Este campo es requerido")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public string lastName {get; set;}
 
         [Display(Name = "Edad")]
-        [Required(ErrorMessage = "{0} Este campo es requerido")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public int age {get; set;}
 
         [Display(Name = "Altura")]
-        [Required(ErrorMessage = "{0} Este campo es requerido")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public float height {get; set;}
 
         [Display(Name = "Peso")]
-        [Required(ErrorMessage = "{0} Este campo es requerido")]      
+        [Required(ErrorMessage = "Este campo es requerido")]      
         public float weight {get; set;}
         
         [Display(Name = "Posición")]        
-        [Required(ErrorMessage = "{0} Este campo es requerido")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public string position {get; set;}      
          
         public Player () {}
