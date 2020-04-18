@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GTMS.Data;
 using GTMS.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GTMS.Controllers
 {
+    [Authorize]             //
     public class PlayerController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -20,6 +22,7 @@ namespace GTMS.Controllers
         }
 
         // GET: Player
+        [Authorize(Roles = "admin")]        
         public async Task<IActionResult> Index()
         {
             return View(await _context.Player.ToListAsync());
