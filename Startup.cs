@@ -28,12 +28,12 @@ namespace GTMS
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));        
-            /*
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
-                .AddRoles<IdentityRole>()           //without this line then roles wouldn't be added
-                .AddEntityFrameworkStores<ApplicationDbContext>();
-                */
+                    Configuration.GetConnectionString("DefaultConnection")));  
+
+            services.AddDbContext<GtmsContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));  
+                    
             services.AddControllersWithViews();
            services.AddRazorPages();
 

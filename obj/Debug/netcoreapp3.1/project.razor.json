@@ -20521,8 +20521,18 @@
   "RootNamespace": "GTMS",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Team\\Create.cshtml",
+      "TargetPath": "Views\\Team\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Player\\Details.cshtml",
       "TargetPath": "Views\\Player\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Team\\Edit.cshtml",
+      "TargetPath": "Views\\Team\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20548,6 +20558,21 @@
     {
       "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Team\\Details.cshtml",
+      "TargetPath": "Views\\Team\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Team\\Index.cshtml",
+      "TargetPath": "Views\\Team\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Team\\Delete.cshtml",
+      "TargetPath": "Views\\Team\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {

@@ -7,26 +7,25 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GTMS.Data;
 using GTMS.Models;
-using Microsoft.AspNetCore.Authorization;
 
 namespace GTMS.Controllers
-{       
-    public class PlayerController : Controller
+{
+    public class TeamController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly GtmsContext _context;
 
-        public PlayerController(ApplicationDbContext context)
+        public TeamController(GtmsContext context)
         {
             _context = context;
         }
 
-        // GET: Player     
+        // GET: Team
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Player.ToListAsync());
+            return View(await _context.Teams.ToListAsync());
         }
 
-        // GET: Player/Details/5
+        // GET: Team/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,39 +33,39 @@ namespace GTMS.Controllers
                 return NotFound();
             }
 
-            var player = await _context.Player
+            var team = await _context.Teams
                 .FirstOrDefaultAsync(m => m.uniqueID == id);
-            if (player == null)
+            if (team == null)
             {
                 return NotFound();
             }
 
-            return View(player);
+            return View(team);
         }
 
-        // GET: Player/Create
+        // GET: Team/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Player/Create
+        // POST: Team/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("uniqueID,id,name,lastName,age,height,weight,position")] Player player)
+        public async Task<IActionResult> Create([Bind("uniqueID,name,entrenador")] Team team)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(player);
+                _context.Add(team);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(player);
+            return View(team);
         }
 
-        // GET: Player/Edit/5
+        // GET: Team/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -74,22 +73,22 @@ namespace GTMS.Controllers
                 return NotFound();
             }
 
-            var player = await _context.Player.FindAsync(id);
-            if (player == null)
+            var team = await _context.Teams.FindAsync(id);
+            if (team == null)
             {
                 return NotFound();
             }
-            return View(player);
+            return View(team);
         }
 
-        // POST: Player/Edit/5
+        // POST: Team/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("uniqueID,id,name,lastName,age,height,weight,position")] Player player)
+        public async Task<IActionResult> Edit(int id, [Bind("uniqueID,name,entrenador")] Team team)
         {
-            if (id != player.uniqueID)
+            if (id != team.uniqueID)
             {
                 return NotFound();
             }
@@ -98,12 +97,12 @@ namespace GTMS.Controllers
             {
                 try
                 {
-                    _context.Update(player);
+                    _context.Update(team);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PlayerExists(player.uniqueID))
+                    if (!TeamExists(team.uniqueID))
                     {
                         return NotFound();
                     }
@@ -114,10 +113,10 @@ namespace GTMS.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(player);
+            return View(team);
         }
 
-        // GET: Player/Delete/5
+        // GET: Team/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -125,30 +124,30 @@ namespace GTMS.Controllers
                 return NotFound();
             }
 
-            var player = await _context.Player
+            var team = await _context.Teams
                 .FirstOrDefaultAsync(m => m.uniqueID == id);
-            if (player == null)
+            if (team == null)
             {
                 return NotFound();
             }
 
-            return View(player);
+            return View(team);
         }
 
-        // POST: Player/Delete/5
+        // POST: Team/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var player = await _context.Player.FindAsync(id);
-            _context.Player.Remove(player);
+            var team = await _context.Teams.FindAsync(id);
+            _context.Teams.Remove(team);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool PlayerExists(int id)
+        private bool TeamExists(int id)
         {
-            return _context.Player.Any(e => e.uniqueID == id);
+            return _context.Teams.Any(e => e.uniqueID == id);
         }
     }
 }
