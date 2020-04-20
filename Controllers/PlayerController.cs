@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace GTMS.Controllers
 {
-    [Authorize]             //
+    //[Authorize]             
     public class PlayerController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -22,7 +22,7 @@ namespace GTMS.Controllers
         }
 
         // GET: Player
-        [Authorize(Roles = "admin")]        
+        //[Authorize(Roles = "admin")]        
         public async Task<IActionResult> Index()
         {
             return View(await _context.Player.ToListAsync());

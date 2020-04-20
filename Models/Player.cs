@@ -17,6 +17,9 @@ namespace GTMS.Models
         [Required(ErrorMessage = "Este campo es requerido")]
         public int id {get; set; }
 
+        [Display(Name = "Equipo")]
+        public string team {get; set;}
+
         [Display(Name = "Nombre")]
         [Required(ErrorMessage = "Este campo es requerido")]
         public string name {get; set;}

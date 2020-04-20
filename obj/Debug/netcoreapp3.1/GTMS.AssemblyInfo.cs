@@ -11,7 +11,6 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap4")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-GTMS-B690FCEB-ED80-4C67-918C-B8F23DC14C19")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("GTMS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
