@@ -25,8 +25,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                     </ul>
-                </div>
-                 <div class="dropdown">
+                    <div class="dropdown">
                     <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
                             style="background-color:white;color:black;border:none !important;outline:none !important">
                         Jugadores
@@ -35,8 +34,27 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-controller="Player" asp-action="Index">Listar jugadores</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Player" asp-action="Create">Registrar jugadores</a>
+                        </li>
                     </div>
-                </div>          
+                    </div>
+                    
+                    <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                            style="background-color:white;color:black;border:none !important;outline:none !important">
+                        Equipos
+                    </button>
+                    <div class="dropdown-menu">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Team" asp-action="Index">Listar equipos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Team" asp-action="Create">Registrar equipos</a>
+                        </li>
+                    </div>
+                    </div> 
+                </div>        
             </div>
         </nav>
     </header>
