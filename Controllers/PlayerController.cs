@@ -151,7 +151,6 @@ namespace GTMS.Controllers
         {
             return _context.Players.Any(e => e.PlayerID == id);
         }
-
         private List<SelectListItem> getTeamsSelectList()
         {
             List<Team> teamsList = _context.Teams.ToList();
@@ -167,6 +166,6 @@ namespace GTMS.Controllers
                 };
             });
             return list;
-        }
+        }        
     }
 }

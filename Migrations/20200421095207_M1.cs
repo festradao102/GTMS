@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace GTMS.Data.Migrations
+namespace GTMS.Migrations
 {
     public partial class M1 : Migration
     {
