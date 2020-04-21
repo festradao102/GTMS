@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using GTMS.Data;
 using GTMS.Models;
+using GTMS.Data;
 
 namespace GTMS.Controllers
 {
     public class TeamController : Controller
     {
-        private readonly GtmsContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public TeamController(GtmsContext context)
+        public TeamController(ApplicationDbContext context)
         {
             _context = context;
         }

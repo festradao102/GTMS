@@ -30,10 +30,11 @@ namespace GTMS
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));  
 
+            /*
             services.AddDbContext<GtmsContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));  
-                    
+            */      
             services.AddControllersWithViews();
            services.AddRazorPages();
 

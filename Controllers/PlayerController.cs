@@ -12,9 +12,9 @@ namespace GTMS.Controllers
 {
     public class PlayerController : Controller
     {
-        private readonly GtmsContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public PlayerController(GtmsContext context)
+        public PlayerController(ApplicationDbContext context)
         {
             _context = context;
         }
