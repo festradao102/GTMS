@@ -147,3 +147,13 @@ C:\Users\Fabs\Documents\Workspace vscode\GTMS\bin\Debug\netcoreapp3.1\runtimes\w
 C:\Users\Fabs\Documents\Workspace vscode\GTMS\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Fabs\Documents\Workspace vscode\GTMS\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.Design.dll
 C:\Users\Fabs\Documents\Workspace vscode\GTMS\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.Design.dll
+C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Team\Create.cshtml.g.cs
+C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Team\Delete.cshtml.g.cs
+C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Team\Details.cshtml.g.cs
+C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Team\Edit.cshtml.g.cs
+C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Team\Index.cshtml.g.cs
+C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Player\Create.cshtml.g.cs
+C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Player\Delete.cshtml.g.cs
+C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Player\Details.cshtml.g.cs
+C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Player\Edit.cshtml.g.cs
+C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Player\Index.cshtml.g.cs
