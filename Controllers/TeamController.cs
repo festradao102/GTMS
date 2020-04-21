@@ -22,7 +22,7 @@ namespace GTMS.Controllers
         // GET: Team
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Teams.ToListAsync());
+            return View(await _context.Team.ToListAsync());
         }
 
         // GET: Team/Details/5
@@ -33,7 +33,7 @@ namespace GTMS.Controllers
                 return NotFound();
             }
 
-            var team = await _context.Teams
+            var team = await _context.Team
                 .FirstOrDefaultAsync(m => m.uniqueID == id);
             if (team == null)
             {
@@ -73,7 +73,7 @@ namespace GTMS.Controllers
                 return NotFound();
             }
 
-            var team = await _context.Teams.FindAsync(id);
+            var team = await _context.Team.FindAsync(id);
             if (team == null)
             {
                 return NotFound();
@@ -124,7 +124,7 @@ namespace GTMS.Controllers
                 return NotFound();
             }
 
-            var team = await _context.Teams
+            var team = await _context.Team
                 .FirstOrDefaultAsync(m => m.uniqueID == id);
             if (team == null)
             {
@@ -139,15 +139,15 @@ namespace GTMS.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var team = await _context.Teams.FindAsync(id);
-            _context.Teams.Remove(team);
+            var team = await _context.Team.FindAsync(id);
+            _context.Team.Remove(team);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool TeamExists(int id)
         {
-            return _context.Teams.Any(e => e.uniqueID == id);
+            return _context.Team.Any(e => e.uniqueID == id);
         }
     }
 }

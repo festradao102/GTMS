@@ -13,9 +13,9 @@ namespace GTMS.Controllers
 {       
     public class PlayerController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly GtmsContext _context;
 
-        public PlayerController(ApplicationDbContext context)
+        public PlayerController(GtmsContext context)
         {
             _context = context;
         }
@@ -47,6 +47,7 @@ namespace GTMS.Controllers
         // GET: Player/Create
         public IActionResult Create()
         {
+            ViewBag.ListOfTeams = getTeamsSelectList();
             return View();
         }
 
@@ -79,6 +80,7 @@ namespace GTMS.Controllers
             {
                 return NotFound();
             }
+            ViewBag.ListOfTeams = getTeamsSelectList();
             return View(player);
         }
 
@@ -149,6 +151,23 @@ namespace GTMS.Controllers
         private bool PlayerExists(int id)
         {
             return _context.Player.Any(e => e.uniqueID == id);
+        }
+
+        private List<SelectListItem> getTeamsSelectList()
+        {
+            List<Team> teamsList = _context.Team.ToList();
+
+            // clase <SelectListItem> para llenar un elemento en la(s) vista(s). Tiene  las propiedades text, value, selected.
+            List<SelectListItem> list = teamsList.ConvertAll( a =>
+            {
+                return new SelectListItem()
+                {
+                    Text = a.name,
+                    Value = a.name,
+                    Selected = false
+                };
+            });
+            return list;
         }
     }
 }

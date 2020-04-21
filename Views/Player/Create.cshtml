@@ -47,6 +47,15 @@
                 <input asp-for="position" class="form-control" />
                 <span asp-validation-for="position" class="text-danger"></span>
             </div>
+
+            <div class="form-group">
+                <label asp-for="team" class="control-label"></label>
+                <select asp-for="team" class="form-control" asp-items="@ViewBag.ListOfTeams">
+                    <option disabled selected>--- Elija un equipo --- </option>
+                </select>
+                <span asp-validation-for="team" class="text-danger"></span>
+            </div> 
+                       
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

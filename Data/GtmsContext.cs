@@ -18,7 +18,7 @@ namespace GTMS.Data
         }
 
         //definir entidades del modelo a mapear
-        public DbSet<GTMS.Models.Team> Teams { get; set; }
-        public DbSet<GTMS.Models.Player> Players { get; set; }
+        public DbSet<GTMS.Models.Team> Team { get; set; }
+        public DbSet<GTMS.Models.Player> Player { get; set; }
     }
 }
