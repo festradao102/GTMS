@@ -16,7 +16,7 @@ namespace GTMS.Models
 
         [Display(Name = "Nombre")]
         [Required(ErrorMessage = "Este campo es requerido")]
-        public string name {get; set;}
+        public string teamName {get; set;}
 
         [Display(Name = "Entrenador")]
         [Required(ErrorMessage = "Este campo es requerido")]

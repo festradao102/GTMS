@@ -11,13 +11,13 @@ namespace GTMS.Models
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int uniquePlayerID {get; set;}
+        public int PlayerID {get; set;}
 
         [Display(Name = "Identificacion")]
         [Required(ErrorMessage = "Este campo es requerido")]
         public int identification {get; set; }
 
-        [ForeignKey("FK_Player_Team")]
+        [ForeignKey("teamName")]
         [Required(ErrorMessage = "Este campo es requerido")]
         [Display(Name = "Equipo")]
         public string team {get; set;}
