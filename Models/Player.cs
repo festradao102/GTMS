@@ -11,12 +11,14 @@ namespace GTMS.Models
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int uniqueID {get; set;}
+        public int uniquePlayerID {get; set;}
 
         [Display(Name = "Identificacion")]
         [Required(ErrorMessage = "Este campo es requerido")]
-        public int id {get; set; }
+        public int identification {get; set; }
 
+        [ForeignKey("FK_Player_Team")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         [Display(Name = "Equipo")]
         public string team {get; set;}
 
@@ -43,19 +45,6 @@ namespace GTMS.Models
         [Display(Name = "Posición")]        
         [Required(ErrorMessage = "Este campo es requerido")]
         public string position {get; set;}      
-         
-        public Player () {}
-
-        public Player (int pid, string pname, string plastName, int page, float pheight, float pweight, string pposition)
-        {
-            this.id = pid;
-            this.name = pname;
-            this.lastName = plastName;
-            this.age = page;
-            this.height = pheight;
-            this.weight = pweight;
-            this.position = pposition;
-        }
 
     }
 }

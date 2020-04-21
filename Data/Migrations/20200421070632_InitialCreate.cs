@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace GTMS.Data.Migrations.Gtms
+namespace GTMS.Migrations
 {
-    public partial class M1 : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -10,47 +10,47 @@ namespace GTMS.Data.Migrations.Gtms
                 name: "Team",
                 columns: table => new
                 {
-                    uniqueID = table.Column<int>(nullable: false)
+                    uniqueTeamID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     name = table.Column<string>(nullable: false),
-                    entrenador = table.Column<string>(nullable: false)
+                    trainer = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Team", x => x.uniqueID);
+                    table.PrimaryKey("PK_Team", x => x.uniqueTeamID);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Player",
                 columns: table => new
                 {
-                    uniqueID = table.Column<int>(nullable: false)
+                    uniquePlayerID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    id = table.Column<int>(nullable: false),
-                    team = table.Column<string>(nullable: true),
+                    identification = table.Column<int>(nullable: false),
+                    team = table.Column<string>(nullable: false),
                     name = table.Column<string>(nullable: false),
                     lastName = table.Column<string>(nullable: false),
                     age = table.Column<int>(nullable: false),
                     height = table.Column<float>(nullable: false),
                     weight = table.Column<float>(nullable: false),
                     position = table.Column<string>(nullable: false),
-                    TeamuniqueID = table.Column<int>(nullable: true)
+                    TeamuniqueTeamID = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Player", x => x.uniqueID);
+                    table.PrimaryKey("PK_Player", x => x.uniquePlayerID);
                     table.ForeignKey(
-                        name: "FK_Player_Team_TeamuniqueID",
-                        column: x => x.TeamuniqueID,
+                        name: "FK_Player_Team_TeamuniqueTeamID",
+                        column: x => x.TeamuniqueTeamID,
                         principalTable: "Team",
-                        principalColumn: "uniqueID",
+                        principalColumn: "uniqueTeamID",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Player_TeamuniqueID",
+                name: "IX_Player_TeamuniqueTeamID",
                 table: "Player",
-                column: "TeamuniqueID");
+                column: "TeamuniqueTeamID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

@@ -12,7 +12,7 @@ namespace GTMS.Models
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int uniqueID {get; set;}
+        public int uniqueTeamID {get; set;}
 
         [Display(Name = "Nombre")]
         [Required(ErrorMessage = "Este campo es requerido")]
@@ -20,7 +20,7 @@ namespace GTMS.Models
 
         [Display(Name = "Entrenador")]
         [Required(ErrorMessage = "Este campo es requerido")]
-        public string entrenador {get; set;}
+        public string trainer {get; set;}
 
         public List<Player> Players {get; set;}
         public Team () {}

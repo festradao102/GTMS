@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace GTMS.Data.Migrations.Gtms
+namespace GTMS.Migrations
 {
     [DbContext(typeof(GtmsContext))]
     partial class GtmsContextModelSnapshot : ModelSnapshot
@@ -21,12 +21,12 @@ namespace GTMS.Data.Migrations.Gtms
 
             modelBuilder.Entity("GTMS.Models.Player", b =>
                 {
-                    b.Property<int>("uniqueID")
+                    b.Property<int>("uniquePlayerID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("TeamuniqueID")
+                    b.Property<int?>("TeamuniqueTeamID")
                         .HasColumnType("int");
 
                     b.Property<int>("age")
@@ -35,7 +35,7 @@ namespace GTMS.Data.Migrations.Gtms
                     b.Property<float>("height")
                         .HasColumnType("real");
 
-                    b.Property<int>("id")
+                    b.Property<int>("identification")
                         .HasColumnType("int");
 
                     b.Property<string>("lastName")
@@ -51,34 +51,35 @@ namespace GTMS.Data.Migrations.Gtms
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("team")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<float>("weight")
                         .HasColumnType("real");
 
-                    b.HasKey("uniqueID");
+                    b.HasKey("uniquePlayerID");
 
-                    b.HasIndex("TeamuniqueID");
+                    b.HasIndex("TeamuniqueTeamID");
 
                     b.ToTable("Player");
                 });
 
             modelBuilder.Entity("GTMS.Models.Team", b =>
                 {
-                    b.Property<int>("uniqueID")
+                    b.Property<int>("uniqueTeamID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("entrenador")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("uniqueID");
+                    b.Property<string>("trainer")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("uniqueTeamID");
 
                     b.ToTable("Team");
                 });
@@ -87,7 +88,7 @@ namespace GTMS.Data.Migrations.Gtms
                 {
                     b.HasOne("GTMS.Models.Team", null)
                         .WithMany("Players")
-                        .HasForeignKey("TeamuniqueID");
+                        .HasForeignKey("TeamuniqueTeamID");
                 });
 #pragma warning restore 612, 618
         }
