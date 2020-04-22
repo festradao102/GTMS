@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GTMS.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200421095207_M1")]
+    [Migration("20200422101856_M1")]
     partial class M1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,6 +20,19 @@ namespace GTMS.Migrations
                 .HasAnnotation("ProductVersion", "3.1.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("GTMS.Models.ConfigValues", b =>
+                {
+                    b.Property<string>("ValueID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ValueID");
+
+                    b.ToTable("ConfigValues");
+                });
 
             modelBuilder.Entity("GTMS.Models.Player", b =>
                 {

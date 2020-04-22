@@ -19,6 +19,19 @@ namespace GTMS.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("GTMS.Models.ConfigValues", b =>
+                {
+                    b.Property<string>("ValueID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ValueID");
+
+                    b.ToTable("ConfigValues");
+                });
+
             modelBuilder.Entity("GTMS.Models.Player", b =>
                 {
                     b.Property<int>("PlayerID")

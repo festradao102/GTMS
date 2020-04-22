@@ -47,6 +47,18 @@ namespace GTMS.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ConfigValues",
+                columns: table => new
+                {
+                    ValueID = table.Column<string>(nullable: false),
+                    Description = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ConfigValues", x => x.ValueID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Team",
                 columns: table => new
                 {
@@ -254,6 +266,9 @@ namespace GTMS.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "ConfigValues");
 
             migrationBuilder.DropTable(
                 name: "Player");

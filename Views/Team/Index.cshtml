@@ -4,16 +4,16 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Equipos</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Registrar equipo</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.TeamID)
+                @Html.DisplayNameFor(model => model.TeamName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Trainer)
@@ -25,15 +25,15 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.TeamID)
+                @Html.DisplayFor(modelItem => item.TeamName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Trainer)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.TeamName">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.TeamName">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.TeamName">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.TeamName">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.TeamName">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.TeamName">Eliminar</a>
             </td>
         </tr>
 }

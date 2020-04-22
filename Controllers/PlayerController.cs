@@ -47,6 +47,7 @@ namespace GTMS.Controllers
         public IActionResult Create()
         {
             ViewBag.ListOfTeams = getTeamsSelectList();
+            ViewBag.ListOfConfigValues = getPositionsSelectList();
             return View();
         }
 
@@ -80,6 +81,7 @@ namespace GTMS.Controllers
                 return NotFound();
             }
             ViewBag.ListOfTeams = getTeamsSelectList();
+            ViewBag.ListOfConfigValues = getPositionsSelectList();
             return View(player);
         }
 
@@ -166,6 +168,22 @@ namespace GTMS.Controllers
                 };
             });
             return list;
-        }        
+        }
+
+        private List<SelectListItem> getPositionsSelectList()
+        {
+            List<ConfigValues> valueList = _context.ConfigValues.ToList();
+
+            List<SelectListItem> list = valueList.ConvertAll( a =>
+            {
+                return new SelectListItem()
+                {
+                    Text = a.Description,
+                    Value = a.Description,
+                    Selected = false
+                };
+            });
+            return list;
+        }                
     }
 }

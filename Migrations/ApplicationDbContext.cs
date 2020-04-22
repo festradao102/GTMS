@@ -14,10 +14,12 @@ namespace GTMS.Data
             base.OnModelCreating(builder);
             builder.Entity<Team>().ToTable("Team");
             builder.Entity<Player>().ToTable("Player");
+            builder.Entity<ConfigValues>().ToTable("ConfigValues");
         }
 
         //definir entidades del modelo a mapear
         public DbSet<Team> Teams { get; set; }
         public DbSet<Player> Players { get; set; }
+        public DbSet<ConfigValues> ConfigValues {get; set;}
     }
 }
