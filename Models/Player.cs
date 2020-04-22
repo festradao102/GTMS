@@ -8,7 +8,7 @@ namespace GTMS.Models
 {
     public class Player
     {
-
+        
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PlayerID {get; set;}
