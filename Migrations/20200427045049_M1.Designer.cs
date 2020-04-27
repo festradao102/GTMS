@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GTMS.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200422101856_M1")]
+    [Migration("20200427045049_M1")]
     partial class M1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -77,6 +77,42 @@ namespace GTMS.Migrations
                     b.HasIndex("TeamName1");
 
                     b.ToTable("Player");
+                });
+
+            modelBuilder.Entity("GTMS.Models.Referee", b =>
+                {
+                    b.Property<int>("PlayerID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
+
+                    b.Property<float>("Height")
+                        .HasColumnType("real");
+
+                    b.Property<int>("Identification")
+                        .HasColumnType("int");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Position")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<float>("Weight")
+                        .HasColumnType("real");
+
+                    b.HasKey("PlayerID");
+
+                    b.ToTable("Referee");
                 });
 
             modelBuilder.Entity("GTMS.Models.Team", b =>

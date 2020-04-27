@@ -21,5 +21,6 @@ namespace GTMS.Data
         public DbSet<Team> Teams { get; set; }
         public DbSet<Player> Players { get; set; }
         public DbSet<ConfigValues> ConfigValues {get; set;}
+        public DbSet<Referee> Referee {get; set;}
     }
 }

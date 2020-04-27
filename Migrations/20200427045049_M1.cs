@@ -59,6 +59,25 @@ namespace GTMS.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Referee",
+                columns: table => new
+                {
+                    PlayerID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Identification = table.Column<int>(nullable: false),
+                    Name = table.Column<string>(nullable: false),
+                    LastName = table.Column<string>(nullable: false),
+                    Age = table.Column<int>(nullable: false),
+                    Height = table.Column<float>(nullable: false),
+                    Weight = table.Column<float>(nullable: false),
+                    Position = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Referee", x => x.PlayerID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Team",
                 columns: table => new
                 {
@@ -272,6 +291,9 @@ namespace GTMS.Migrations
 
             migrationBuilder.DropTable(
                 name: "Player");
+
+            migrationBuilder.DropTable(
+                name: "Referee");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
