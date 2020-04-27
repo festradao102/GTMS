@@ -157,3 +157,10 @@ C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\View
 C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Player\Details.cshtml.g.cs
 C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Player\Edit.cshtml.g.cs
 C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Player\Index.cshtml.g.cs
+C:\Users\Fabs\Documents\Workspace vscode\GTMS\bin\Debug\netcoreapp3.1\Npgsql.dll
+C:\Users\Fabs\Documents\Workspace vscode\GTMS\bin\Debug\netcoreapp3.1\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Referee\Create.cshtml.g.cs
+C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Referee\Delete.cshtml.g.cs
+C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Referee\Details.cshtml.g.cs
+C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Referee\Edit.cshtml.g.cs
+C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Referee\Index.cshtml.g.cs

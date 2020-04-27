@@ -4,18 +4,19 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GTMS.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class GtmsDbContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public GtmsDbContext(DbContextOptions<GtmsDbContext> options)
             : base(options)
         {
         }
+
         protected override void OnModelCreating(ModelBuilder builder){
             base.OnModelCreating(builder);
             builder.Entity<Team>().ToTable("Team");
             builder.Entity<Player>().ToTable("Player");
             builder.Entity<ConfigValues>().ToTable("ConfigValues");
-            builder.Entity<ConfigValues>().ToTable("Referee");
+            builder.Entity<Referee>().ToTable("Referee");
         }
 
         //definir entidades del modelo a mapear

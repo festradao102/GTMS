@@ -10,85 +10,85 @@ using GTMS.Models;
 
 namespace GTMS.Controllers
 {
-    public class TeamController : Controller
+    public class RefereeController : Controller
     {
         private readonly GtmsDbContext _context;
 
-        public TeamController(GtmsDbContext context)
+        public RefereeController(GtmsDbContext context)
         {
             _context = context;
         }
 
-        // GET: Team
+        // GET: Referee
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Teams.ToListAsync());
+            return View(await _context.Referees.ToListAsync());
         }
 
-        // GET: Team/Details/5
-        public async Task<IActionResult> Details(string id)
+        // GET: Referee/Details/5
+        public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var team = await _context.Teams
-                .FirstOrDefaultAsync(m => m.TeamName == id);
-            if (team == null)
+            var referee = await _context.Referees
+                .FirstOrDefaultAsync(m => m.RefereeID == id);
+            if (referee == null)
             {
                 return NotFound();
             }
 
-            return View(team);
+            return View(referee);
         }
 
-        // GET: Team/Create
+        // GET: Referee/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Team/Create
+        // POST: Referee/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TeamID,TeamName,Trainer")] Team team)
+        public async Task<IActionResult> Create([Bind("RefereeID,Identification,Name,LastName,Age,Height,Weight,Position")] Referee referee)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(team);
+                _context.Add(referee);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(team);
+            return View(referee);
         }
 
-        // GET: Team/Edit/5
-        public async Task<IActionResult> Edit(string id)
+        // GET: Referee/Edit/5
+        public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var team = await _context.Teams.FindAsync(id);
-            if (team == null)
+            var referee = await _context.Referees.FindAsync(id);
+            if (referee == null)
             {
                 return NotFound();
             }
-            return View(team);
+            return View(referee);
         }
 
-        // POST: Team/Edit/5
+        // POST: Referee/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("TeamID,TeamName,Trainer")] Team team)
+        public async Task<IActionResult> Edit(int id, [Bind("RefereeID,Identification,Name,LastName,Age,Height,Weight,Position")] Referee referee)
         {
-            if (id != team.TeamName)
+            if (id != referee.RefereeID)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace GTMS.Controllers
             {
                 try
                 {
-                    _context.Update(team);
+                    _context.Update(referee);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!TeamExists(team.TeamName))
+                    if (!RefereeExists(referee.RefereeID))
                     {
                         return NotFound();
                     }
@@ -113,41 +113,41 @@ namespace GTMS.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(team);
+            return View(referee);
         }
 
-        // GET: Team/Delete/5
-        public async Task<IActionResult> Delete(string id)
+        // GET: Referee/Delete/5
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var team = await _context.Teams
-                .FirstOrDefaultAsync(m => m.TeamName == id);
-            if (team == null)
+            var referee = await _context.Referees
+                .FirstOrDefaultAsync(m => m.RefereeID == id);
+            if (referee == null)
             {
                 return NotFound();
             }
 
-            return View(team);
+            return View(referee);
         }
 
-        // POST: Team/Delete/5
+        // POST: Referee/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var team = await _context.Teams.FindAsync(id);
-            _context.Teams.Remove(team);
+            var referee = await _context.Referees.FindAsync(id);
+            _context.Referees.Remove(referee);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool TeamExists(string id)
+        private bool RefereeExists(int id)
         {
-            return _context.Teams.Any(e => e.TeamName == id);
+            return _context.Referees.Any(e => e.RefereeID == id);
         }
     }
 }

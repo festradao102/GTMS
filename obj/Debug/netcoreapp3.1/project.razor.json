@@ -20581,6 +20581,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Referee\\Create.cshtml",
+      "TargetPath": "Views\\Referee\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Referee\\Edit.cshtml",
+      "TargetPath": "Views\\Referee\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
@@ -20588,6 +20598,11 @@
     {
       "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Referee\\Index.cshtml",
+      "TargetPath": "Views\\Referee\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20601,8 +20616,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Referee\\Details.cshtml",
+      "TargetPath": "Views\\Referee\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Player\\Index.cshtml",
       "TargetPath": "Views\\Player\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Referee\\Delete.cshtml",
+      "TargetPath": "Views\\Referee\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {
