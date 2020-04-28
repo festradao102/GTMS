@@ -9,7 +9,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace GTMS.Migrations.GtmsDb
 {
     [DbContext(typeof(GtmsDbContext))]
-    [Migration("20200427070138_M2")]
+    [Migration("20200428025245_M2")]
     partial class M2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
