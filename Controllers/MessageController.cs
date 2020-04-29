@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GTMS.Data;
 using GTMS.Models;
+using Apache.NMS;
+using Apache.NMS.Util;
 
 namespace GTMS.Controllers
 {
@@ -56,27 +58,24 @@ namespace GTMS.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("msgID,Description")] Message message)
         {
+            IConnectionFactory iconnfactory = new NMSConnectionFactory("tcp://localhost:61616");
+            IConnection conn = iconnfactory.CreateConnection();
+
             if (ModelState.IsValid)
             {
                 _context.Add(message);
                 await _context.SaveChangesAsync();
+                conn.Start();
+
+                ISession session = conn.CreateSession();
+                IDestination dest = SessionUtil.GetDestination(session, "dev_queue");
+                IMessageProducer msgProducer = session.CreateProducer(dest);
+                
+                msgProducer.Send(message);
+                session.Close();
+                conn.Stop();
+
                 return RedirectToAction(nameof(Index));
-            }
-            return View(message);
-        }
-
-        // GET: Message/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var message = await _context.Messages.FindAsync(id);
-            if (message == null)
-            {
-                return NotFound();
             }
             return View(message);
         }
