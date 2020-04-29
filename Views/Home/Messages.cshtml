@@ -1,0 +1,24 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h2>Messages</h2>
+</div>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="SendMessage">
+            <div class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Message</label>
+                <input class="form-control" required/>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Send messsage" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+

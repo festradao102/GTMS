@@ -17,12 +17,14 @@ namespace GTMS.Data
             builder.Entity<Player>().ToTable("Player");
             builder.Entity<ConfigValues>().ToTable("ConfigValues");
             builder.Entity<Referee>().ToTable("Referee");
+            builder.Entity<Message>().ToTable("Message");
         }
 
         //definir entidades del modelo a mapear
         public DbSet<Team> Teams { get; set; }
         public DbSet<Player> Players { get; set; }
         public DbSet<ConfigValues> ConfigValues {get; set;}
-        public DbSet<Referee> Referees {get; set;}
+        public DbSet<Referee> Referees {get; set;} 
+        public DbSet<Message> Messages {get; set;}
     }
 }

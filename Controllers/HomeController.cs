@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using GTMS.Models;
+using Apache.NMS;
+using Apache.NMS.Util;
 
 namespace GTMS.Controllers
 {
@@ -33,5 +35,38 @@ namespace GTMS.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+        public IActionResult Messages()
+        {
+            return View();
+        }
+
+        #pragma warning disable 1998
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Messages(String message)
+        {
+            IConnectionFactory iconnfactory = new NMSConnectionFactory("tcp://localhost:61616");
+            IConnection conn = iconnfactory.CreateConnection();
+
+            if (ModelState.IsValid)
+            {
+                conn.Start();
+
+                ISession session = conn.CreateSession();
+                IDestination dest = SessionUtil.GetDestination(session, "dev_queue");
+                IMessageProducer msgProducer = session.CreateProducer(dest);
+                
+                msgProducer.Send(message);
+                session.Close();
+                conn.Stop();
+
+                return RedirectToAction(nameof(Index));
+            }
+            return View();
+        }
+        
+
     }
 }

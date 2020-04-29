@@ -20526,6 +20526,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Home\\Messages.cshtml",
+      "TargetPath": "Views\\Home\\Messages.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Player\\Details.cshtml",
       "TargetPath": "Views\\Player\\Details.cshtml",
       "FileKind": "mvc"
@@ -20548,6 +20553,11 @@
     {
       "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Player\\Edit.cshtml",
       "TargetPath": "Views\\Player\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Message\\Edit.cshtml",
+      "TargetPath": "Views\\Message\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20586,6 +20596,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Message\\Create.cshtml",
+      "TargetPath": "Views\\Message\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Referee\\Edit.cshtml",
       "TargetPath": "Views\\Referee\\Edit.cshtml",
       "FileKind": "mvc"
@@ -20593,6 +20608,11 @@
     {
       "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Message\\Index.cshtml",
+      "TargetPath": "Views\\Message\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20621,6 +20641,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Message\\Delete.cshtml",
+      "TargetPath": "Views\\Message\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Player\\Index.cshtml",
       "TargetPath": "Views\\Player\\Index.cshtml",
       "FileKind": "mvc"
@@ -20633,6 +20658,11 @@
     {
       "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Message\\Details.cshtml",
+      "TargetPath": "Views\\Message\\Details.cshtml",
       "FileKind": "mvc"
     },
     {

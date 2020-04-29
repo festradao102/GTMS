@@ -2,7 +2,28 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "AWSSDK.Core/3.3.100": {
+      "Apache.NMS/1.7.1": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Apache.NMS.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Apache.NMS.dll": {}
+        }
+      },
+      "Apache.NMS.ActiveMQ/1.7.2": {
+        "type": "package",
+        "dependencies": {
+          "Apache.NMS": "1.7.1"
+        },
+        "compile": {
+          "lib/net40/Apache.NMS.ActiveMQ.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Apache.NMS.ActiveMQ.dll": {}
+        }
+      },
+      "AWSSDK.Core/3.3.106.12": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/AWSSDK.Core.dll": {}
@@ -24,6 +45,18 @@
         },
         "runtime": {
           "lib/netstandard2.0/AWSSDK.Extensions.NETCore.Setup.dll": {}
+        }
+      },
+      "AWSSDK.SQS/3.3.102.99": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.3.106.12, 3.4.0)"
+        },
+        "compile": {
+          "lib/netstandard2.0/AWSSDK.SQS.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AWSSDK.SQS.dll": {}
         }
       },
       "Microsoft.AspNetCore.Cryptography.Internal/3.1.3": {
@@ -2668,15 +2701,62 @@
     }
   },
   "libraries": {
-    "AWSSDK.Core/3.3.100": {
-      "sha512": "1zJggHEvcrqLRrICUJFsmmqxlnbQimUihhTsSWSlErqEi2keTROPrShmnAzz5aMU0dGuMFI8jWbAL1On2QXpKg==",
+    "Apache.NMS/1.7.1": {
+      "sha512": "sQA+1dl1hBB0AkhBys7oJ6y9lBJnjH5xVc2aQ5bbEv/pbyMhlN8Yuo/NceYVGNdSK89ANp9XyQsaVUI975QLjg==",
       "type": "package",
-      "path": "awssdk.core/3.3.100",
+      "path": "apache.nms/1.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "NOTICE.txt",
+        "apache.nms.1.7.1.nupkg.sha512",
+        "apache.nms.nuspec",
+        "lib/net20-cf/Apache.NMS.dll",
+        "lib/net20-cf/Apache.NMS.pdb",
+        "lib/net20-cf/Apache.NMS.xml",
+        "lib/net20/Apache.NMS.dll",
+        "lib/net20/Apache.NMS.pdb",
+        "lib/net20/Apache.NMS.xml",
+        "lib/net35/Apache.NMS.dll",
+        "lib/net35/Apache.NMS.pdb",
+        "lib/net35/Apache.NMS.xml",
+        "lib/net40/Apache.NMS.dll",
+        "lib/net40/Apache.NMS.pdb",
+        "lib/net40/Apache.NMS.xml"
+      ]
+    },
+    "Apache.NMS.ActiveMQ/1.7.2": {
+      "sha512": "byKSg5/G7JGoDzSGGw4KK43/hpOGrXCtjZyjBcEjTF6ZscnrUiy8r20nyv85P55+nNmfa8q+tSF0GURd1GxYag==",
+      "type": "package",
+      "path": "apache.nms.activemq/1.7.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "NOTICE.txt",
+        "apache.nms.activemq.1.7.2.nupkg.sha512",
+        "apache.nms.activemq.nuspec",
+        "lib/net20/Apache.NMS.ActiveMQ.dll",
+        "lib/net20/Apache.NMS.ActiveMQ.pdb",
+        "lib/net20/Apache.NMS.ActiveMQ.xml",
+        "lib/net35/Apache.NMS.ActiveMQ.dll",
+        "lib/net35/Apache.NMS.ActiveMQ.pdb",
+        "lib/net35/Apache.NMS.ActiveMQ.xml",
+        "lib/net40/Apache.NMS.ActiveMQ.dll",
+        "lib/net40/Apache.NMS.ActiveMQ.pdb",
+        "lib/net40/Apache.NMS.ActiveMQ.xml"
+      ]
+    },
+    "AWSSDK.Core/3.3.106.12": {
+      "sha512": "XDbbRxv4HqcOsmbkoosbASguMuRuP792k9RUKu4v2HaH2/AoVHIq/4HvSlgXpmrxRlTD9pTtWbh1FSF0Ktm8Gg==",
+      "type": "package",
+      "path": "awssdk.core/3.3.106.12",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "awssdk.core.3.3.100.nupkg.sha512",
+        "awssdk.core.3.3.106.12.nupkg.sha512",
         "awssdk.core.nuspec",
         "lib/MonoAndroid10/AWSSDK.Core.XML",
         "lib/MonoAndroid10/AWSSDK.Core.dll",
@@ -2730,6 +2810,46 @@
         "lib/netstandard1.3/AWSSDK.Extensions.NETCore.Setup.pdb",
         "lib/netstandard2.0/AWSSDK.Extensions.NETCore.Setup.dll",
         "lib/netstandard2.0/AWSSDK.Extensions.NETCore.Setup.pdb"
+      ]
+    },
+    "AWSSDK.SQS/3.3.102.99": {
+      "sha512": "p/irRrim4Vt/h+KhIcF4GL9EaRI1t06KNnqeBApZsCb/XTNH7+XNHEl6dE2VlntlZlsmpuNFypA+X6rbXSkeIA==",
+      "type": "package",
+      "path": "awssdk.sqs/3.3.102.99",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/AWSSDK.SQS.CodeAnalysis.dll",
+        "awssdk.sqs.3.3.102.99.nupkg.sha512",
+        "awssdk.sqs.nuspec",
+        "lib/MonoAndroid10/AWSSDK.SQS.XML",
+        "lib/MonoAndroid10/AWSSDK.SQS.dll",
+        "lib/MonoTouch10/AWSSDK.SQS.XML",
+        "lib/MonoTouch10/AWSSDK.SQS.dll",
+        "lib/MonoTouch10/AWSSDK.SQS.pdb",
+        "lib/Xamarin.iOS10/AWSSDK.SQS.XML",
+        "lib/Xamarin.iOS10/AWSSDK.SQS.dll",
+        "lib/net35/AWSSDK.SQS.dll",
+        "lib/net35/AWSSDK.SQS.pdb",
+        "lib/net35/AWSSDK.SQS.xml",
+        "lib/net45/AWSSDK.SQS.dll",
+        "lib/net45/AWSSDK.SQS.pdb",
+        "lib/net45/AWSSDK.SQS.xml",
+        "lib/netstandard1.3/AWSSDK.SQS.dll",
+        "lib/netstandard1.3/AWSSDK.SQS.pdb",
+        "lib/netstandard1.3/AWSSDK.SQS.xml",
+        "lib/netstandard2.0/AWSSDK.SQS.dll",
+        "lib/netstandard2.0/AWSSDK.SQS.pdb",
+        "lib/netstandard2.0/AWSSDK.SQS.xml",
+        "lib/portable-net45+win8+wpa81+wp8/AWSSDK.SQS.XML",
+        "lib/portable-net45+win8+wpa81+wp8/AWSSDK.SQS.dll",
+        "lib/portable-net45+win8+wpa81+wp8/AWSSDK.SQS.pdb",
+        "lib/uap/AWSSDK.SQS.XML",
+        "lib/uap/AWSSDK.SQS.dll",
+        "lib/uap/AWSSDK.SQS.pdb",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
       ]
     },
     "Microsoft.AspNetCore.Cryptography.Internal/3.1.3": {
@@ -8612,14 +8732,16 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "AWSSDK.Extensions.NETCore.Setup",
+      "AWSSDK.Extensions.NETCore.Setup >= 3.3.101",
+      "Apache.NMS.ActiveMQ >= 1.7.2",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 3.1.1",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 3.1.3",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.3",
       "Microsoft.EntityFrameworkCore.SqlServer.Design >= 1.1.6",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.1",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.2",
-      "Npgsql.EntityFrameworkCore.PostgreSQL >= 3.1.3"
+      "Npgsql.EntityFrameworkCore.PostgreSQL >= 3.1.3",
+      "awssdk.sqs >= 3.3.102.99"
     ]
   },
   "packageFolders": {
@@ -8655,6 +8777,9 @@
         }
       },
       "warningProperties": {
+        "noWarn": [
+          "NU1701"
+        ],
         "warnAsError": [
           "NU1605"
         ]
@@ -8665,7 +8790,11 @@
         "dependencies": {
           "AWSSDK.Extensions.NETCore.Setup": {
             "target": "Package",
-            "version": "(, )"
+            "version": "[3.3.101, )"
+          },
+          "Apache.NMS.ActiveMQ": {
+            "target": "Package",
+            "version": "[1.7.2, )"
           },
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
             "target": "Package",
@@ -8694,6 +8823,10 @@
           "Npgsql.EntityFrameworkCore.PostgreSQL": {
             "target": "Package",
             "version": "[3.1.3, )"
+          },
+          "awssdk.sqs": {
+            "target": "Package",
+            "version": "[3.3.102.99, )"
           }
         },
         "imports": [
