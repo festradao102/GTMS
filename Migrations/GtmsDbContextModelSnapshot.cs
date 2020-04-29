@@ -33,8 +33,10 @@ namespace GTMS.Migrations
 
             modelBuilder.Entity("GTMS.Models.Message", b =>
                 {
-                    b.Property<string>("msgID")
-                        .HasColumnType("text");
+                    b.Property<int>("msgID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("Description")
                         .HasColumnType("text");

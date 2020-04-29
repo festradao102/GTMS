@@ -23,7 +23,8 @@ namespace GTMS.Migrations
                 name: "Message",
                 columns: table => new
                 {
-                    msgID = table.Column<string>(nullable: false),
+                    msgID = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Description = table.Column<string>(nullable: true)
                 },
                 constraints: table =>

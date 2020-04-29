@@ -170,8 +170,3 @@ C:\Users\Fabs\Documents\Workspace vscode\GTMS\bin\Debug\netcoreapp3.1\AWSSDK.SQS
 C:\Users\Fabs\Documents\Workspace vscode\GTMS\bin\Debug\netcoreapp3.1\Apache.NMS.dll
 C:\Users\Fabs\Documents\Workspace vscode\GTMS\bin\Debug\netcoreapp3.1\Apache.NMS.ActiveMQ.dll
 C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Home\Messages.cshtml.g.cs
-C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Message\Create.cshtml.g.cs
-C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Message\Delete.cshtml.g.cs
-C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Message\Details.cshtml.g.cs
-C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Message\Edit.cshtml.g.cs
-C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Message\Index.cshtml.g.cs

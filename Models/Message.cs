@@ -10,7 +10,8 @@ namespace GTMS.Models
     {
         
         [Key]
-        public string msgID {get; set;}
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int msgID {get; set;}
 
         [Display(Name = "Message")]
         public string Description {get; set; }

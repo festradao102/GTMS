@@ -7,8 +7,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GTMS.Data;
 using GTMS.Models;
-using Apache.NMS;
-using Apache.NMS.Util;
 
 namespace GTMS.Controllers
 {
@@ -28,7 +26,7 @@ namespace GTMS.Controllers
         }
 
         // GET: Message/Details/5
-        public async Task<IActionResult> Details(string id)
+        public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
             {
@@ -58,21 +56,8 @@ namespace GTMS.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("msgID,Description")] Message message)
         {
-            IConnectionFactory iconnfactory = new NMSConnectionFactory("tcp://localhost:61616");
-            IConnection conn = iconnfactory.CreateConnection();
-
             if (ModelState.IsValid)
             {
-                conn.Start();
-
-                ISession session = conn.CreateSession();
-                IDestination dest = SessionUtil.GetDestination(session, "dev_queue");
-                IMessageProducer msgProducer = session.CreateProducer(dest);
-                
-                msgProducer.Send(message);
-                session.Close();
-                conn.Stop();
-
                 _context.Add(message);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -81,7 +66,7 @@ namespace GTMS.Controllers
         }
 
         // GET: Message/Edit/5
-        public async Task<IActionResult> Edit(string id)
+        public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
             {
@@ -101,7 +86,7 @@ namespace GTMS.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("msgID,Description")] Message message)
+        public async Task<IActionResult> Edit(int id, [Bind("msgID,Description")] Message message)
         {
             if (id != message.msgID)
             {
@@ -132,7 +117,7 @@ namespace GTMS.Controllers
         }
 
         // GET: Message/Delete/5
-        public async Task<IActionResult> Delete(string id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
             {
@@ -152,7 +137,7 @@ namespace GTMS.Controllers
         // POST: Message/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var message = await _context.Messages.FindAsync(id);
             _context.Messages.Remove(message);
@@ -160,7 +145,7 @@ namespace GTMS.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool MessageExists(string id)
+        private bool MessageExists(int id)
         {
             return _context.Messages.Any(e => e.msgID == id);
         }
