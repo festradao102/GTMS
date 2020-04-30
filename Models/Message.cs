@@ -11,9 +11,7 @@ namespace GTMS.Models
         
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int msgID {get; set;}
-
-        //public DateTime SentDate { get; set; }       
+        public int msgID {get; set;}    
 
         [Display(Name = "Message")]
         public string Description {get; set; }
