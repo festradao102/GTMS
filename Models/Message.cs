@@ -13,6 +13,8 @@ namespace GTMS.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int msgID {get; set;}
 
+        //public DateTime SentDate { get; set; }       
+
         [Display(Name = "Message")]
         public string Description {get; set; }
 

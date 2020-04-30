@@ -63,7 +63,7 @@ namespace GTMS.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("msgID,Description")] GTMS.Models.Message message)
         {
-
+                
             string queueName = "dev_queue"; 
             Console.WriteLine($"Adding message to queue topic: {queueName}");        
             string brokerUri = $"activemq:ssl://b-57e8bf3e-69c9-4bec-b528-de407901bd09-1.mq.us-east-2.amazonaws.com:61617";  // Default port
