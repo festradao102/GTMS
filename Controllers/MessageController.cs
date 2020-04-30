@@ -9,6 +9,11 @@ using GTMS.Data;
 using GTMS.Models;
 using Apache.NMS;
 using Apache.NMS.Util;
+using Apache.NMS.ActiveMQ;
+using Apache.NMS.ActiveMQ.Util;
+using Apache.NMS.ActiveMQ.Transport.Tcp;
+using Apache.NMS.ActiveMQ.Transport;
+using Apache.NMS.ActiveMQ.Commands;
 
 namespace GTMS.Controllers
 {
@@ -56,36 +61,46 @@ namespace GTMS.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("msgID,Description")] Message message)
+        public async Task<IActionResult> Create([Bind("msgID,Description")] GTMS.Models.Message message)
         {
-            IConnectionFactory iconnfactory = new NMSConnectionFactory("tcp://localhost:61616");
-            IConnection conn = iconnfactory.CreateConnection();
 
-            if (ModelState.IsValid)
+            string queueName = "dev_queue"; 
+            Console.WriteLine($"Adding message to queue topic: {queueName}");        
+            string brokerUri = $"activemq:ssl://b-57e8bf3e-69c9-4bec-b528-de407901bd09-1.mq.us-east-2.amazonaws.com:61617";  // Default port
+            NMSConnectionFactory factory = new NMSConnectionFactory(brokerUri);
+        
+            using (IConnection connection = factory.CreateConnection("admin","adminactivemq"))
             {
-                _context.Add(message);
-                await _context.SaveChangesAsync();
-                conn.Start();
+                connection.Start();
+        
+                using (ISession session = connection.CreateSession(AcknowledgementMode.AutoAcknowledge))
+                using (IDestination dest = session.GetQueue(queueName))
+                using (IMessageProducer producer = session.CreateProducer(dest))
+                { 
+                    producer.DeliveryMode = MsgDeliveryMode.NonPersistent;
+        
+                    producer.Send(message);
+                    Console.WriteLine($"Sent {message} messages");
 
-                ISession session = conn.CreateSession();
-                IDestination dest = SessionUtil.GetDestination(session, "dev_queue");
-                IMessageProducer msgProducer = session.CreateProducer(dest);
-                
-                msgProducer.Send(message);
-                session.Close();
-                conn.Stop();
+                        if (ModelState.IsValid){
 
-                return RedirectToAction(nameof(Index));
-            }
-            return View(message);
-        }
+                            _context.Add(message);
+                            await _context.SaveChangesAsync();
+                            return RedirectToAction(nameof(Index));
+                        }
+                        return View(message);  
+                }
+            } 
+        }          
+ 
+
 
         // POST: Message/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("msgID,Description")] Message message)
+        public async Task<IActionResult> Edit(int id, [Bind("msgID,Description")] GTMS.Models.Message message)
         {
             if (id != message.msgID)
             {

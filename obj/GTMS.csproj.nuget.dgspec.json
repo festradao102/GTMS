@@ -48,6 +48,10 @@
               "target": "Package",
               "version": "[3.3.101, )"
             },
+            "AWSSDK.MQ": {
+              "target": "Package",
+              "version": "[3.3.105.55, )"
+            },
             "Apache.NMS.ActiveMQ": {
               "target": "Package",
               "version": "[1.7.2, )"

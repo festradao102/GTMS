@@ -18,7 +18,8 @@
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\Fabs\.nuget\packages\microsoft.codeanalysis.analyzers\2.9.4</PkgMicrosoft_CodeAnalysis_Analyzers>
     <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">C:\Users\Fabs\.nuget\packages\microsoft.entityframeworkcore.tools\3.1.1</PkgMicrosoft_EntityFrameworkCore_Tools>
-    <PkgAWSSDK_Core Condition=" '$(PkgAWSSDK_Core)' == '' ">C:\Users\Fabs\.nuget\packages\awssdk.core\3.3.106.12</PkgAWSSDK_Core>
+    <PkgAWSSDK_Core Condition=" '$(PkgAWSSDK_Core)' == '' ">C:\Users\Fabs\.nuget\packages\awssdk.core\3.3.106.13</PkgAWSSDK_Core>
     <PkgAWSSDK_SQS Condition=" '$(PkgAWSSDK_SQS)' == '' ">C:\Users\Fabs\.nuget\packages\awssdk.sqs\3.3.102.99</PkgAWSSDK_SQS>
+    <PkgAWSSDK_MQ Condition=" '$(PkgAWSSDK_MQ)' == '' ">C:\Users\Fabs\.nuget\packages\awssdk.mq\3.3.105.55</PkgAWSSDK_MQ>
   </PropertyGroup>
 </Project>

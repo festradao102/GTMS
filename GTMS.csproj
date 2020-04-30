@@ -7,8 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>    
-    <PackageReference Include="Apache.NMS.ActiveMQ" Version="1.7.2"/>
+    <PackageReference Include="Apache.NMS.ActiveMQ" Version="1.7.2" />
     <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.3.101" />
+    <PackageReference Include="AWSSDK.MQ" Version="3.3.105.55" />
     <PackageReference Include="awssdk.sqs" Version="3.3.102.99" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.3" />

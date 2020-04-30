@@ -23,7 +23,7 @@
           "lib/net40/Apache.NMS.ActiveMQ.dll": {}
         }
       },
-      "AWSSDK.Core/3.3.106.12": {
+      "AWSSDK.Core/3.3.106.13": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/AWSSDK.Core.dll": {}
@@ -45,6 +45,18 @@
         },
         "runtime": {
           "lib/netstandard2.0/AWSSDK.Extensions.NETCore.Setup.dll": {}
+        }
+      },
+      "AWSSDK.MQ/3.3.105.55": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.3.106.13, 3.4.0)"
+        },
+        "compile": {
+          "lib/netstandard2.0/AWSSDK.MQ.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AWSSDK.MQ.dll": {}
         }
       },
       "AWSSDK.SQS/3.3.102.99": {
@@ -2748,15 +2760,15 @@
         "lib/net40/Apache.NMS.ActiveMQ.xml"
       ]
     },
-    "AWSSDK.Core/3.3.106.12": {
-      "sha512": "XDbbRxv4HqcOsmbkoosbASguMuRuP792k9RUKu4v2HaH2/AoVHIq/4HvSlgXpmrxRlTD9pTtWbh1FSF0Ktm8Gg==",
+    "AWSSDK.Core/3.3.106.13": {
+      "sha512": "w2QHR1vnmKeAggy14tzgX54R/xt3P1MmyQByQiWyV1bE3T7ORll6MFrlFyZV0Juz/QqT8BfXdM6PdSV8PCUVgQ==",
       "type": "package",
-      "path": "awssdk.core/3.3.106.12",
+      "path": "awssdk.core/3.3.106.13",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "awssdk.core.3.3.106.12.nupkg.sha512",
+        "awssdk.core.3.3.106.13.nupkg.sha512",
         "awssdk.core.nuspec",
         "lib/MonoAndroid10/AWSSDK.Core.XML",
         "lib/MonoAndroid10/AWSSDK.Core.dll",
@@ -2810,6 +2822,46 @@
         "lib/netstandard1.3/AWSSDK.Extensions.NETCore.Setup.pdb",
         "lib/netstandard2.0/AWSSDK.Extensions.NETCore.Setup.dll",
         "lib/netstandard2.0/AWSSDK.Extensions.NETCore.Setup.pdb"
+      ]
+    },
+    "AWSSDK.MQ/3.3.105.55": {
+      "sha512": "KzsPGt8gidWW8IMwJamdQ1yP4XWLSL4iPs398pu0l8urUsTzxuqr9erH8Br0UEePfJt4C5SkDtxGsE59eL0ydg==",
+      "type": "package",
+      "path": "awssdk.mq/3.3.105.55",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/AWSSDK.MQ.CodeAnalysis.dll",
+        "awssdk.mq.3.3.105.55.nupkg.sha512",
+        "awssdk.mq.nuspec",
+        "lib/MonoAndroid10/AWSSDK.MQ.XML",
+        "lib/MonoAndroid10/AWSSDK.MQ.dll",
+        "lib/MonoTouch10/AWSSDK.MQ.XML",
+        "lib/MonoTouch10/AWSSDK.MQ.dll",
+        "lib/MonoTouch10/AWSSDK.MQ.pdb",
+        "lib/Xamarin.iOS10/AWSSDK.MQ.XML",
+        "lib/Xamarin.iOS10/AWSSDK.MQ.dll",
+        "lib/net35/AWSSDK.MQ.dll",
+        "lib/net35/AWSSDK.MQ.pdb",
+        "lib/net35/AWSSDK.MQ.xml",
+        "lib/net45/AWSSDK.MQ.dll",
+        "lib/net45/AWSSDK.MQ.pdb",
+        "lib/net45/AWSSDK.MQ.xml",
+        "lib/netstandard1.3/AWSSDK.MQ.dll",
+        "lib/netstandard1.3/AWSSDK.MQ.pdb",
+        "lib/netstandard1.3/AWSSDK.MQ.xml",
+        "lib/netstandard2.0/AWSSDK.MQ.dll",
+        "lib/netstandard2.0/AWSSDK.MQ.pdb",
+        "lib/netstandard2.0/AWSSDK.MQ.xml",
+        "lib/portable-net45+win8+wpa81+wp8/AWSSDK.MQ.XML",
+        "lib/portable-net45+win8+wpa81+wp8/AWSSDK.MQ.dll",
+        "lib/portable-net45+win8+wpa81+wp8/AWSSDK.MQ.pdb",
+        "lib/uap/AWSSDK.MQ.XML",
+        "lib/uap/AWSSDK.MQ.dll",
+        "lib/uap/AWSSDK.MQ.pdb",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
       ]
     },
     "AWSSDK.SQS/3.3.102.99": {
@@ -8733,6 +8785,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "AWSSDK.Extensions.NETCore.Setup >= 3.3.101",
+      "AWSSDK.MQ >= 3.3.105.55",
       "Apache.NMS.ActiveMQ >= 1.7.2",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 3.1.1",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 3.1.3",
@@ -8791,6 +8844,10 @@
           "AWSSDK.Extensions.NETCore.Setup": {
             "target": "Package",
             "version": "[3.3.101, )"
+          },
+          "AWSSDK.MQ": {
+            "target": "Package",
+            "version": "[3.3.105.55, )"
           },
           "Apache.NMS.ActiveMQ": {
             "target": "Package",
