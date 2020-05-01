@@ -56,6 +56,10 @@ namespace GTMS.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("integer");
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<float>("Height")
                         .HasColumnType("real");
 

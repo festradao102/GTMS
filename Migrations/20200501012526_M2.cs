@@ -78,6 +78,7 @@ namespace GTMS.Migrations
                     Age = table.Column<int>(nullable: false),
                     Height = table.Column<float>(nullable: false),
                     Weight = table.Column<float>(nullable: false),
+                    Email = table.Column<string>(nullable: false),
                     Position = table.Column<string>(nullable: false),
                     TeamName1 = table.Column<string>(nullable: true)
                 },

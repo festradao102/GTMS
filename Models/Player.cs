@@ -41,6 +41,10 @@ namespace GTMS.Models
         [Display(Name = "Peso")]
         [Required(ErrorMessage = "Este campo es requerido")]      
         public float Weight {get; set;}
+
+        [Display(Name = "Correo electrónico")]
+        [Required(ErrorMessage = "Este campo es requerido")]
+        public string Email {get; set;}
         
         [Display(Name = "Posición")]        
         [Required(ErrorMessage = "Este campo es requerido")]

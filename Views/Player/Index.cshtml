@@ -34,6 +34,9 @@
                 @Html.DisplayNameFor(model => model.Weight)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Position)
             </th>
             <th></th>
@@ -64,12 +67,15 @@
                 @Html.DisplayFor(modelItem => item.Weight)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Position)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.PlayerID">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.PlayerID">Detalle</a> |
-                <a asp-action="Delete" asp-route-id="@item.PlayerID">Eliminar</a>
+                <a asp-action="Edit" asp-route-id="@item.PlayerID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PlayerID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PlayerID">Delete</a>
             </td>
         </tr>
 }

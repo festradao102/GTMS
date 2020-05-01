@@ -9,7 +9,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace GTMS.Migrations
 {
     [DbContext(typeof(GtmsDbContext))]
-    [Migration("20200429065413_M2")]
+    [Migration("20200501012526_M2")]
     partial class M2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -57,6 +57,10 @@ namespace GTMS.Migrations
 
                     b.Property<int>("Age")
                         .HasColumnType("integer");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<float>("Height")
                         .HasColumnType("real");

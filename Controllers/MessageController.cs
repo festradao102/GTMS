@@ -154,8 +154,11 @@ namespace GTMS.Controllers
             // definir el "receiver" en caso de ser el servicio consumiendo el queue 
 
             string queueName = "dev_queue"; 
-            Console.WriteLine($"Adding message to queue topic: {queueName}");        
-            string brokerUri = $"activemq:ssl://b-57e8bf3e-69c9-4bec-b528-de407901bd09-1.mq.us-east-2.amazonaws.com:61617";  // Default port
+            Console.WriteLine($"Adding message to queue topic: {queueName}");       
+
+            string brokerUri = $"activemq:tcp://localhost:61616";  // dev broker
+            //string brokerUri = $"activemq:ssl://b-57e8bf3e-69c9-4bec-b528-de407901bd09-1.mq.us-east-2.amazonaws.com:61617";
+              
             NMSConnectionFactory factory = new NMSConnectionFactory(brokerUri);
         
             using (IConnection connection = factory.CreateConnection("admin","adminactivemq"))

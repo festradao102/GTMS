@@ -63,12 +63,12 @@ namespace GTMS.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PlayerID,Identification,TeamName,Name,LastName,Age,Height,Weight,Position")] Player player)
-        {
-            SendQueueMessages(player);
-
+        public async Task<IActionResult> Create([Bind("PlayerID,Identification,TeamName,Name,LastName,Age,Height,Weight,Email,Position")] Player player)
+        {           
             if (ModelState.IsValid)
             {
+                SendQueueMessages(player);
+                
                 _context.Add(player);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -89,8 +89,6 @@ namespace GTMS.Controllers
             {
                 return NotFound();
             }
-            ViewBag.ListOfTeams = getTeamsSelectList();
-            ViewBag.ListOfConfigValues = getPositionsSelectList();
             return View(player);
         }
 
@@ -99,7 +97,7 @@ namespace GTMS.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PlayerID,Identification,TeamName,Name,LastName,Age,Height,Weight,Position")] Player player)
+        public async Task<IActionResult> Edit(int id, [Bind("PlayerID,Identification,TeamName,Name,LastName,Age,Height,Weight,Email,Position")] Player player)
         {
             if (id != player.PlayerID)
             {
@@ -162,7 +160,8 @@ namespace GTMS.Controllers
         {
             return _context.Players.Any(e => e.PlayerID == id);
         }
-        private List<SelectListItem> getTeamsSelectList()
+
+private List<SelectListItem> getTeamsSelectList()
         {
             List<Team> teamsList = _context.Teams.ToList();
 
@@ -199,15 +198,18 @@ namespace GTMS.Controllers
          public void SendQueueMessages(Player message){
 
             // definir nombre del queue, en caso de no existir activemq lo crea
-            // definir el uri del endpoint de aw - aws acepta ssl no tcp asi que el string cambia en el protocolo
+            // definir el uri del endpoint de aws mq - aws acepta ssl no tcp asi que el string cambia en el protocolo
             // al ser ssl hay que enviar las credenciales
-            // apache.nms connectionfactory provee manejo de comunicacion con el queue
+            // hay que configurar en aws console para que el VPC acepte trafico de afuera, agregar una politica en el security group para inbound traffic
+            // connectionfactory del package apache.nms provee manejo de comunicacion con el queue
             // definir el "producer" en caso de la clase que envia de mensaje 
-            // definir el "receiver" en caso de ser el servicio consumiendo el queue 
+            // definir el "receiver" en caso de ser el servicio(s) consumiendo mensajes del queue 
 
             string queueName = "dev_queue"; 
-            Console.WriteLine($"Adding message to queue topic: {queueName}");        
-            string brokerUri = $"activemq:ssl://b-57e8bf3e-69c9-4bec-b528-de407901bd09-1.mq.us-east-2.amazonaws.com:61617";  // Default port
+            Console.WriteLine($"Adding message to queue topic: {queueName}");      
+            string brokerUri = $"activemq:tcp://localhost:61616";  // dev broker
+
+            //string brokerUri = $"activemq:ssl://b-57e8bf3e-69c9-4bec-b528-de407901bd09-1.mq.us-east-2.amazonaws.com:61617";  //prod broker 
             NMSConnectionFactory factory = new NMSConnectionFactory(brokerUri);
         
             using (IConnection connection = factory.CreateConnection("admin","adminactivemq"))
@@ -223,6 +225,7 @@ namespace GTMS.Controllers
                     Console.WriteLine($"Sent {message} messages");
                 }
             }
+
         }            
     }
 }

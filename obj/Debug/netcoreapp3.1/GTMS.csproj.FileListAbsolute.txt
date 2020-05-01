@@ -152,11 +152,6 @@ C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\View
 C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Team\Details.cshtml.g.cs
 C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Team\Edit.cshtml.g.cs
 C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Team\Index.cshtml.g.cs
-C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Player\Create.cshtml.g.cs
-C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Player\Delete.cshtml.g.cs
-C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Player\Details.cshtml.g.cs
-C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Player\Edit.cshtml.g.cs
-C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Player\Index.cshtml.g.cs
 C:\Users\Fabs\Documents\Workspace vscode\GTMS\bin\Debug\netcoreapp3.1\Npgsql.dll
 C:\Users\Fabs\Documents\Workspace vscode\GTMS\bin\Debug\netcoreapp3.1\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Referee\Create.cshtml.g.cs
@@ -176,3 +171,8 @@ C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\View
 C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Message\Edit.cshtml.g.cs
 C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Message\Index.cshtml.g.cs
 C:\Users\Fabs\Documents\Workspace vscode\GTMS\bin\Debug\netcoreapp3.1\AWSSDK.MQ.dll
+C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Player\Create.cshtml.g.cs
+C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Player\Delete.cshtml.g.cs
+C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Player\Details.cshtml.g.cs
+C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Player\Edit.cshtml.g.cs
+C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Player\Index.cshtml.g.cs
