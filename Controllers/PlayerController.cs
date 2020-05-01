@@ -68,7 +68,7 @@ namespace GTMS.Controllers
             if (ModelState.IsValid)
             {
                 SendQueueMessages(player);
-                
+
                 _context.Add(player);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -89,6 +89,8 @@ namespace GTMS.Controllers
             {
                 return NotFound();
             }
+            ViewBag.ListOfTeams = getTeamsSelectList();
+            ViewBag.ListOfConfigValues = getPositionsSelectList();
             return View(player);
         }
 
