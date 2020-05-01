@@ -1,0 +1,59 @@
+@model IEnumerable<GTMS.Models.Player>
+
+<h1>Enviar correos de admisión</h1>
+
+<h4>Lista correos y jugadores</h4>
+<hr />
+
+@{
+    ViewData["Title"] = "SendEmail";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="SendEmailToPlayer">Enviar confirmacion</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TeamName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TeamName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="SendEmail">Back to List</a>
+</div>

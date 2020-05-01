@@ -20586,6 +20586,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Player\\SendEmailToPlayer.cshtml",
+      "TargetPath": "Views\\Player\\SendEmailToPlayer.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Player\\Delete.cshtml",
       "TargetPath": "Views\\Player\\Delete.cshtml",
       "FileKind": "mvc"
@@ -20623,6 +20628,11 @@
     {
       "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Referee\\Index.cshtml",
       "TargetPath": "Views\\Referee\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Player\\SendEmail.cshtml",
+      "TargetPath": "Views\\Player\\SendEmail.cshtml",
       "FileKind": "mvc"
     },
     {

@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace GTMS.Models
 
 {
-    public class Player
+    public class Player 
     {
         
         [Key]

@@ -14,11 +14,14 @@ using Apache.NMS.ActiveMQ.Util;
 using Apache.NMS.ActiveMQ.Transport.Tcp;
 using Apache.NMS.ActiveMQ.Transport;
 using Apache.NMS.ActiveMQ.Commands;
+using System.Net.Http;
+using System.Net.Http.Headers;
 
 namespace GTMS.Controllers
 {
     public class PlayerController : Controller
     {
+
         private readonly GtmsDbContext _context;
 
         public PlayerController(GtmsDbContext context)
@@ -163,11 +166,11 @@ namespace GTMS.Controllers
             return _context.Players.Any(e => e.PlayerID == id);
         }
 
-private List<SelectListItem> getTeamsSelectList()
+        private List<SelectListItem> getTeamsSelectList()
         {
             List<Team> teamsList = _context.Teams.ToList();
 
-            // clase <SelectListItem> para llenar un elemento en la(s) vista(s). Tiene  las propiedades text, value, selected.
+            // clase <SelectListItem> para llenar un elemento en la(s) vista(s). Tiene las propiedades text, value, selected.
             List<SelectListItem> list = teamsList.ConvertAll( a =>
             {
                 return new SelectListItem()
@@ -196,6 +199,51 @@ private List<SelectListItem> getTeamsSelectList()
             return list;
         }    
 
+        // GET: Player/SendEmail
+        public async Task<IActionResult> SendEmail()
+        {
+            return View(await _context.Players.ToListAsync());
+        }
+
+        // Player/send email
+        public async Task<ActionResult> SendEmailToPlayer()
+        { 
+            try
+            {
+                HttpClientHandler clientHandler = new HttpClientHandler();
+                clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
+                                        
+                using (var client = new HttpClient(clientHandler)){  
+
+                //Hosted web API REST Service base url -- MessageApi
+                string Baseurl = "https://localhost:5003"; 
+
+                //pasar el url del servicio restapi
+                client.BaseAddress = new Uri(Baseurl);  
+    
+                client.DefaultRequestHeaders.Clear();  
+
+                //definir tipo formato del request, pareciera no importar para este strings xml 
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));  
+
+                //enviar request para encontrar el recurso "api/ReceivedMessage" usando HttpClient del .net framework
+                HttpResponseMessage Res = await client.GetAsync("api/ReceivedMessage");  
+    
+                //verificar si la respuesta es exitosa o no  
+                if (Res.IsSuccessStatusCode)  
+                {  
+                    //guardar los detalles de la respuesta del api  
+                    var response = Res.Content.ReadAsStringAsync().Result;    
+                }                 
+                return View();  
+            }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Internal server Error");                
+                throw e;
+            }           
+        }        
 
          public void SendQueueMessages(Player message){
 
