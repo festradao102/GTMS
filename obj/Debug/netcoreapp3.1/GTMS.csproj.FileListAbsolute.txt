@@ -178,3 +178,4 @@ C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\View
 C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Player\Index.cshtml.g.cs
 C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Player\SendEmail.cshtml.g.cs
 C:\Users\Fabs\Documents\Workspace vscode\GTMS\obj\Debug\netcoreapp3.1\Razor\Views\Player\SendEmailToPlayer.cshtml.g.cs
+C:\Users\Fabs\Documents\Workspace vscode\GTMS\bin\Debug\netcoreapp3.1\aws-windows-deployment-manifest.json

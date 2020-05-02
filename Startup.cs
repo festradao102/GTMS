@@ -31,8 +31,6 @@ namespace GTMS
                 options.UseNpgsql(
                     Configuration.GetConnectionString("DefaultConnection")));       
                     
-                     
-
             /*
 
             services.AddDbContext<ApplicationDbContext>(options =>
