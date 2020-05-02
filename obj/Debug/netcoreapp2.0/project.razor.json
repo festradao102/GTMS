@@ -1,0 +1,180 @@
+{
+  "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\GTMS.csproj",
+  "Configuration": {
+    "ConfigurationName": "MVC-3.0",
+    "LanguageVersion": "3.0",
+    "Extensions": [
+      {
+        "ExtensionName": "MVC-3.0"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": {
+    "TagHelpers": [],
+    "CSharpLanguageVersion": 703
+  },
+  "RootNamespace": "GTMS",
+  "Documents": [
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Team\\Create.cshtml",
+      "TargetPath": "Views\\Team\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Home\\Messages.cshtml",
+      "TargetPath": "Views\\Home\\Messages.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Player\\Details.cshtml",
+      "TargetPath": "Views\\Player\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Team\\Edit.cshtml",
+      "TargetPath": "Views\\Team\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Player\\Create.cshtml",
+      "TargetPath": "Views\\Player\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Player\\Edit.cshtml",
+      "TargetPath": "Views\\Player\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Message\\Edit.cshtml",
+      "TargetPath": "Views\\Message\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Shared\\Error.cshtml",
+      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Team\\Details.cshtml",
+      "TargetPath": "Views\\Team\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Team\\Index.cshtml",
+      "TargetPath": "Views\\Team\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Team\\Delete.cshtml",
+      "TargetPath": "Views\\Team\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Player\\SendEmailToPlayer.cshtml",
+      "TargetPath": "Views\\Player\\SendEmailToPlayer.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Player\\Delete.cshtml",
+      "TargetPath": "Views\\Player\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Referee\\Create.cshtml",
+      "TargetPath": "Views\\Referee\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Message\\Create.cshtml",
+      "TargetPath": "Views\\Message\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Referee\\Edit.cshtml",
+      "TargetPath": "Views\\Referee\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Message\\Index.cshtml",
+      "TargetPath": "Views\\Message\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Referee\\Index.cshtml",
+      "TargetPath": "Views\\Referee\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Player\\SendEmail.cshtml",
+      "TargetPath": "Views\\Player\\SendEmail.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Referee\\Details.cshtml",
+      "TargetPath": "Views\\Referee\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Message\\Delete.cshtml",
+      "TargetPath": "Views\\Message\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Player\\Index.cshtml",
+      "TargetPath": "Views\\Player\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Referee\\Delete.cshtml",
+      "TargetPath": "Views\\Referee\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Home\\Privacy.cshtml",
+      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Message\\Details.cshtml",
+      "TargetPath": "Views\\Message\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fabs\\Documents\\Workspace vscode\\GTMS\\Views\\Shared\\_LoginPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
+      "FileKind": "mvc"
+    }
+  ],
+  "SerializationFormat": "0.2"
+}
