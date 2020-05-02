@@ -205,7 +205,7 @@ namespace GTMS.Controllers
             return View(await _context.Players.ToListAsync());
         }
 
-        // Player/send email
+        // accion de Player/SendEmail
         public async Task<ActionResult> SendEmailToPlayer()
         { 
             try
@@ -215,28 +215,28 @@ namespace GTMS.Controllers
                                         
                 using (var client = new HttpClient(clientHandler)){  
 
-                //Hosted web API REST Service base url -- MessageApi
-                string Baseurl = "https://localhost:5003"; 
+                    //Hosted web API REST Service base url -- MessageApi
+                    string Baseurl = "https://localhost:5003"; 
 
-                //pasar el url del servicio restapi
-                client.BaseAddress = new Uri(Baseurl);  
-    
-                client.DefaultRequestHeaders.Clear();  
+                    //pasar el url del servicio restapi
+                    client.BaseAddress = new Uri(Baseurl);  
+        
+                    //clear el http header para cada request
+                    client.DefaultRequestHeaders.Clear();  
 
-                //definir tipo formato del request, pareciera no importar para este strings xml 
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));  
+                    //definir tipo formato del request, pareciera no importar para strings de xml 
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));  
 
-                //enviar request para encontrar el recurso "api/ReceivedMessage" usando HttpClient del .net framework
-                HttpResponseMessage Res = await client.GetAsync("api/ReceivedMessage");  
-    
-                //verificar si la respuesta es exitosa o no  
-                if (Res.IsSuccessStatusCode)  
-                {  
-                    //guardar los detalles de la respuesta del api  
-                    var response = Res.Content.ReadAsStringAsync().Result;    
-                }                 
-                return View();  
-            }
+                    //enviar request para encontrar el recurso "api/ReceivedMessage" usando HttpClient del .net framework
+                    HttpResponseMessage Res = await client.GetAsync("api/ReceivedMessage");  
+        
+                    //verificar si la respuesta es exitosa o no  
+                    if (Res.IsSuccessStatusCode)  
+                    {                    
+                        var response = Res.Content.ReadAsStringAsync().Result;  //guardar los detalles de la respuesta del api      
+                    }                 
+                    return View();  
+                }
             }
             catch (Exception e)
             {
@@ -245,6 +245,7 @@ namespace GTMS.Controllers
             }           
         }        
 
+        //enviar mensajes al servicio de comunicacion/mensajeria
          public void SendQueueMessages(Player message){
 
             // definir nombre del queue, en caso de no existir activemq lo crea
@@ -275,7 +276,7 @@ namespace GTMS.Controllers
                     Console.WriteLine($"Sent {message} messages");
                 }
             }
+        }
 
-        }            
     }
 }
