@@ -216,7 +216,9 @@ namespace GTMS.Controllers
                 using (var client = new HttpClient(clientHandler)){  
 
                     //Hosted web API REST Service base url -- MessageApi
-                    string Baseurl = "http://messageapi.us-east-2.elasticbeanstalk.com/"; 
+                    string Baseurl = System.Environment.GetEnvironmentVariable("WORKERQUEUE"); 
+                    //"http://messageapi.us-east-2.elasticbeanstalk.com/"; 
+                    
 
                     //pasar el url del servicio restapi
                     client.BaseAddress = new Uri(Baseurl);  
