@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/739237fe-e144-422b-8dea-ef82ff9a7247/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/gtms-app",
+    "appService.deploySubpath": "publish"
+}

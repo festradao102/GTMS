@@ -3,7 +3,7 @@
     "deployments": {
         "aspNetCoreWeb": [
             {
-                "name": "dotnetapp",
+                "name": "gtms",
                 "parameters": {
                     "appBundle": "site.zip",
                     "iisPath": "/",
